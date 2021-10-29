@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Land</title>
+	<style>
+	  .table_border, thead,tr, th, td{
+		border: 1px solid #000000 !important;
+	  }
+	</style>
+  </head>
+  <body>
+	
+    <h1 class="text-center alert alert-warning font-weight-bold">Site Plan Creator</h1>
+	
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+				<form class="mt-4">
+				<div class="row">
+					<div class="col">
+					<div class="card">
+					<div class="card-header"> Site Plan Address</div>
+					<div class="card-body">
+					<div class="form-group">
+					<textarea placeholder="Site Plan Address" class="form-control" id="site_plan_address"></textarea>
+					</div>	
+					</div>
+				</div>	
+						</div>
+				<div class="col">
+				<div class="card">
+					<div class="card-header"> Land Schedule</div>
+					<div class="card-body">
+					<div class="form-group">
+					<input type="text" placeholder="Mouza" class="form-control" id="mouza">
+					<input type="text" placeholder="J.L No" class="form-control mt-2" id="jlno">
+					<input type="text" placeholder="Plot No" class="form-control mt-2" id="plotno">
+					<input type="text" placeholder="Khatiyan No" class="form-control mt-2" id="khatiyan">
+					<input type="text" placeholder="Sheet No" class="form-control mt-2" id="sheetno">
+					<input type="text" placeholder="Classification" class="form-control mt-2" id="classification">
+					<input type="text" placeholder="Area" class="form-control mt-2" id="area">
+				</div>
+					</div>
+				</div>
+				</div>
+				<div class="col">
+				<div class="card">
+					<div class="card-header">Seller</div>
+					<div class="card-body">
+					<div class="form-group">
+					<input type="text" placeholder="Seller Name" class="form-control" id="seller_name">
+					<input type="text" placeholder="S/o W/o D/o" class="form-control mt-2" id="son_daughter_wife_name_s">
+					<input type="text" placeholder="Address" class="form-control mt-2" id="address_s">
+				</div>
+					</div>
+				</div>
+					</div>
+					<div class="col">
+					<div class="card">
+					<div class="card-header">Purchaser</div>
+					<div class="card-body">
+					<div class="form-group">
+					<input type="text" placeholder="Buyer Name" class="form-control" id="buyer_name">
+					<input type="text" placeholder="S/o W/o D/o" class="form-control mt-2" id="son_daughter_wife_name_b">
+					<input type="text" placeholder="Address" class="form-control mt-2" id="address_b">
+				</div>
+					</div>
+				</div>
+				
+					<div class="card mt-3">
+					<div class="card-header">Scale</div>
+					<div class="card-body">
+					<div class="form-group">
+					<input type="text" placeholder="Scale" class="form-control" id="scale_inp">
+				</div>
+					</div>
+				</div>
+					</div>
+					</div>
+			</form>	
+		</div>
+		<hr>
+		<div class="col-md-12">
+		<div class="mt-5" id="print_section" style="width: 1169px; height: 827px">
+			<p class="font-weight-bold text-center">SITE PLAN SHOWING THE LAND AT <span id="add_site"></span></p>
+			<table class="table table_border">
+				<thead>
+					<tr>
+						<th>Mouza</th>
+						<th>J.L. No</th>
+						<th>Plot No</th>
+						<th>Khatiyan No</th>
+						<th>Sheet No</th>
+						<th>Classification No</th>
+						<th>Area</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span id="mouza_res"></span></td>
+						<td><span id="jlno_res"></span></td>
+						<td><span id="plotno_res"></span></td>
+						<td><span id="khatiyan_res"></span></td>
+						<td><span id="sheetno_res"></span></td>
+						<td><span id="class_res"></span></td>
+						<td><span id="area_res"></span></td>
+					</tr>
+				</tbody>
+			</table><br>
+			<div class="text-center">
+				<p class="font-weight-bold">Scale 1in = <span id="scale"></span></p>
+			</div>
+				<div class="row">
+				<div class="col-md-9">
+				</div>
+					<div class="col-md-3">
+					<div class="card">
+					<div class="card-header">Seller</div>
+					<div class="card-body">
+					<div class="form-group">
+					<p class="font-weight-bold">Name: <span id="seller_name_res"></span></p>
+					<p class="font-weight-bold" id="seller_sdw_res"></p>
+					<p class="font-weight-bold">Address: <span id="seller_adress_res"></span></p>
+				</div>
+					</div>
+				</div>	
+				<div class="card mt-3">
+					<div class="card-header">Buyer</div>
+					<div class="card-body">
+					<div class="form-group">
+					<p class="font-weight-bold">Name: <span id="buyer_name_res"></span></p>
+					<p class="font-weight-bold" id="buyer_sdw_res"></p>
+					<p class="font-weight-bold">Address: <span id="buyer_adress_res"></span></p>
+				</div>
+					</div>
+				</div>
+					</div>
+				</div>
+</div>		
+	
+		</div>
+	</div>
+	</div>
+	<div class="container  mt-5">
+	<input type="button" name="print" class="btn btn-primary rounded-0" id="btn_print" value="Download Land Schedule">	
+	</div>
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.js" integrity="sha512-sk0cNQsixYVuaLJRG0a/KRJo9KBkwTDqr+/V94YrifZ6qi8+OO3iJEoHi0LvcTVv1HaBbbIvpx+MCjOuLVnwKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
+	<script>
+			
+		var site_plan_address = document.getElementById("site_plan_address");	
+		
+		var mouza = document.getElementById("mouza");
+		var jlno = document.getElementById("jlno");
+		var khatiyan = document.getElementById("khatiyan");
+		var sheetno = document.getElementById("sheetno");
+		var classification = document.getElementById("classification");
+		var area = document.getElementById("area");
+		var plno = document.getElementById("plotno");
+		
+		var mres = document.getElementById("mouza_res");
+		var jlres = document.getElementById("jlno_res");
+		var pres = document.getElementById("plotno_res");
+		var khres = document.getElementById("khatiyan_res");
+		var shres = document.getElementById("sheetno_res");
+		var clres = document.getElementById("class_res");
+		var ares = document.getElementById("area_res");		
+		var seller_name = document.getElementById("seller_name");
+		var son_daughter_wife_name_s = document.getElementById("son_daughter_wife_name_s");
+		var address_s = document.getElementById("address_s");
+				
+		var buyer_name = document.getElementById("buyer_name");
+		var son_daughter_wife_name_b = document.getElementById("son_daughter_wife_name_b");
+		var address_b = document.getElementById("address_b");		
+		var scale_in = document.getElementById("scale_inp");
+		scale_in.onkeyup = function(){
+			document.getElementById('scale').innerHTML = scale_in.value;
+		};		
+		mouza.onkeyup = function(){
+			mres.innerHTML = mouza.value;
+		};
+		jlno.onkeyup = function(){
+			jlres.innerHTML = jlno.value;
+		};
+		plno.onkeyup = function(){
+			pres.innerHTML = plno.value;
+		};
+		khatiyan.onkeyup = function(){
+			khres.innerHTML = khatiyan.value;
+		};
+		sheetno.onkeyup = function(){
+			shres.innerHTML = sheetno.value;
+		};
+		classification.onkeyup = function(){
+			clres.innerHTML = classification.value;
+		};
+		area.onkeyup = function(){
+			ares.innerHTML = area.value;
+		};
+
+
+
+		seller_name.onkeyup = function(){
+			seller_name_res.innerHTML = seller_name.value;
+		};
+		son_daughter_wife_name_s.onkeyup = function(){
+			seller_sdw_res.innerHTML = son_daughter_wife_name_s.value;
+		};
+		address_s.onkeyup = function(){
+			seller_adress_res.innerHTML = address_s.value;
+		};
+
+		buyer_name.onkeyup = function(){
+			buyer_name_res.innerHTML = buyer_name.value;
+		};
+		son_daughter_wife_name_b.onkeyup = function(){
+			buyer_sdw_res.innerHTML = son_daughter_wife_name_b.value;
+		};
+		address_b.onkeyup = function(){
+			buyer_adress_res.innerHTML = address_b.value;
+		};
+		site_plan_address.onkeyup = function(){
+			add_site.innerHTML = site_plan_address.value;
+		};
+
+		document.getElementById("btn_print").addEventListener('click', function(e){
+			e.preventDefault();
+			html2canvas(document.getElementById("print_section")).then(function (canvas) {			
+			var anchorTag = document.createElement("a");
+			document.body.appendChild(anchorTag);
+			anchorTag.download = "filename.jpg";
+			anchorTag.href = canvas.toDataURL();
+			anchorTag.target = '_blank';
+			anchorTag.click();
+		});			
+		});	
+		
+	</script>
+  
+  </body>
+</html>
